@@ -1,0 +1,79 @@
+1- verificar tener levantado el XAMPP con apache y mysql en start
+
+--------------------------------------------------------------------------------------------------------
+
+2- despues de crear la tabla para grabar control + S
+
+--------------------------------------------------------------------------------------------------------
+
+3- en el sql query escribir SELECT * FROM usuarios y dar control + enter para ejecutar el sql query
+
+-------------------------------------------------------------------------------------------------------
+
+4- ejecutar en la terminal de vs o en el cmd:
+// instalaciones neceasrias para Table PLus mysql
+// npm install --save sequelize
+// npm install --save mysql2
+
+--------------------------------------------------------------------------------------------------------
+
+5- recordar que para editar la tabla es en la pestaña structure,
+para agregar informacion es en la pestaña data
+
+todo en table plus
+
+------------------------------------------------------------------------------------------------------
+
+6- hacer el trabajo que haya que hacer en visual studio con typescript
+
+--------------------------------------------------------------------------------------------------
+
+6- en caso de agregar updatedAt  y  createdAt   y no se deje agregar y guardar, ejecutar el siguiente comando en el query:
+
+SET SQL_MODE='ALLOW_INVALID_DATES';
+
+nota: verificar que el id siga la sequencia numerica, si todo se hizo bien, ya deberia dejar guardar esos nuevos campos en la bd
+
+--------------------------------------------------------------------------------------------------------------
+
+7- recordar volver a levantar la app en el cmd o en la terminal y hacer pruebas en potman, creando un endpoint
+localhost:8000/api/usuarios
+
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Alexander",
+            "email": "alexander.marti.mil@gmail.com",
+            "estado": true,
+            "createdAt": null,
+            "updatedAt": "2022-07-23T21:58:35.000Z"
+        },
+        {
+            "id": 2,
+            "nombre": "Jeronimo",
+            "email": "jero@gmail.com",
+            "estado": false,
+            "createdAt": null,
+            "updatedAt": "2022-07-23T21:58:35.000Z"
+        }
+    ]
+}
+
+-------------------------------------------------------------------------------------------------------------------------
+
+8- es probable que queramos que otro usuario no use un email ya existente en la bd, para ello nos vamos a nuetra bd
+y hacemos lo siguiente:
+
+a- abrir la estructura de nuetra tabla
+b- seleccionamos el campo email y luego bajamos al boton que dice   "+ Index"
+c- en el renglon que se pone azul poner en el siguiente orden:
+
+en la columna index_name  : email_unique
+en la columan is_unique   : TRUE
+en la columna column_name : email
+
+https://www.udemy.com/course/node-de-cero-a-experto/learn/lecture/24960742#questions
+
+---------------------------------------------------------------------------------------------------------------------------
+
